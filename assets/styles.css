@@ -1,0 +1,371 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&display=swap");
+
+:root {
+  /* colors */
+  --color-darkGrey: 248 10% 15%;
+  --color-grey: 251 9% 53%;
+  --color-almostWhite: 252 11% 91%;
+  --color-veryDarkGrey: 248 15% 11%;
+  --color-neonGreen: 127 100% 82%;
+  --color-red: 0 91% 63%;
+  --color-orange: 13 95% 66%;
+  --color-yellow: 42 91% 68%;
+
+  /* font-sizes */
+  --font-1: 1.5rem;
+  --font-2: 1.125rem;
+  --font-3: 1rem;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: hsl(var(--color-almostWhite));
+  background-color: hsl(var(--color-veryDarkGrey));
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--font-3);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* ================ Custom classes start ==================== */
+.flex {
+  display: flex;
+}
+.d-block {
+  display: block;
+}
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-space, 1rem);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+/* ================ Custom classes end ==================== */
+/* ================ Custom Colors start ==================== */
+
+.bg-veryDark {
+  background-color: hsl(var(--color-veryDarkGrey));
+}
+.bg-dark {
+  background-color: hsl(var(--color-darkGrey));
+}
+.bg-white {
+  background-color: hsl(var(--color-almostWhite));
+}
+.bg-green {
+  background-color: hsl(var(--color-neonGreen));
+}
+.bg-yellow {
+  background-color: hsl(var(--color-yellow));
+}
+.bg-orange {
+  background-color: hsl(var(--color-orange));
+}
+.bg-red {
+  background-color: hsl(var(--color-red));
+}
+
+.text-grey {
+  color: hsl(var(--color-grey));
+}
+.text-white {
+  color: hsl(var(--color-almostWhite));
+}
+.text-dark {
+  color: hsl(var(--color-darkGrey));
+}
+.text-green {
+  color: hsl(var(--color-neonGreen));
+}
+.text-red {
+  color: hsl(var(--color-red));
+}
+
+/* ================ Custom Colors end ==================== */
+/* ================ Custom fonts start ==================== */
+.upcase {
+  text-transform: uppercase;
+}
+
+.font-1 {
+  font-size: var(--font-1);
+  line-height: 2rem;
+}
+
+.font-2 {
+  font-size: var(--font-2);
+  line-height: 1.485rem;
+}
+
+.font-3 {
+  font-size: var(--font-3);
+  line-height: 1.32rem;
+}
+/* ================ Custom fonts end ==================== */
+.container {
+  width: 90%;
+}
+@media only screen and (min-width: 768px) {
+  .container {
+    width: 55%;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .container {
+    width: 35%;
+  }
+}
+
+.title {
+  text-align: center;
+  margin-block: 0;
+  margin-bottom: 1rem;
+}
+
+.field {
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 35em) {
+  .field {
+    padding: 1.5rem 2rem;
+  }
+}
+
+.copy {
+  gap: 1rem;
+  align-items: center;
+}
+
+#copy_message {
+  display: none;
+}
+
+.copyIcon:hover {
+  cursor: pointer;
+}
+
+.copyIcon:hover .copyIconPath {
+  fill: white;
+}
+
+.options {
+  padding: 1rem;
+}
+
+@media (min-width: 35em) {
+  .options {
+    padding: 1.5rem 2rem;
+  }
+}
+
+.sliderLabel {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  background: hsl(var(--color-veryDarkGrey));
+  accent-color: white;
+  cursor: pointer;
+  height: 8px;
+  background-image: linear-gradient(
+    hsl(var(--color-neonGreen)),
+    hsl(var(--color-neonGreen))
+  );
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  height: 28px;
+  width: 28px;
+  background: hsl(var(--color-almostWhite));
+  -webkit-appearance: none;
+  border-radius: 14px;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+  background: hsl(var(--color-veryDarkGrey));
+  border: 2px solid hsl(var(--color-neonGreen));
+  -webkit-appearance: none;
+}
+
+.checkboxes {
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.checkboxLabel {
+  display: block;
+  position: relative;
+  padding-left: 2.5rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkboxLabel input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: hsl(var(--color-darkGrey));
+  border: 2px solid hsl(var(--color-almostWhite));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkboxLabel:hover input ~ .checkmark {
+  border-color: hsl(var(--color-neonGreen));
+}
+
+/* When the checkbox is checked, add a background */
+.checkboxLabel input:not(:checked) ~ .checkmark {
+  background: hsl(var(--color-darkGrey));
+}
+.checkboxLabel input:checked ~ .checkmark {
+  background-color: hsl(var(--color-neonGreen));
+  border-color: hsl(var(--color-neonGreen));
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkboxLabel input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.strength {
+  background-color: hsl(var(--color-veryDarkGrey));
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.strengthLvl {
+  align-items: center;
+}
+
+.strengthLvl p {
+  margin-right: 0.5rem;
+}
+
+.bars {
+  width: 10px;
+  height: 28px;
+  border: 2px solid hsl(var(--color-almostWhite));
+  margin-left: 0.5rem;
+}
+
+.button {
+  width: 100%;
+  padding-top: 1.125rem;
+  padding-bottom: 1.125rem;
+  border: 2px solid hsl(var(--color-neonGreen));
+}
+
+.button:hover {
+  background-color: hsl(var(--color-darkGrey));
+  color: hsl(var(--color-neonGreen));
+  cursor: pointer;
+}
+
+.button svg {
+  margin-left: 1rem;
+}
+
+.button:hover path {
+  fill: hsl(var(--color-neonGreen));
+}
+
+.alert {
+  display: none;
+  text-align: center;
+  color: hsl(var(--color-red));
+}
+.container p.title {
+  color: #817d92;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+/* Indicator class */
+
+.tooWeak {
+  background-color: hsl(var(--color-red));
+  border: 2px solid hsl(var(--color-red));
+}
+
+.weak {
+  background-color: hsl(var(--color-orange));
+  border: 2px solid hsl(var(--color-orange));
+}
+
+.medium {
+  background-color: hsl(var(--color-yellow));
+  border: 2px solid hsl(var(--color-yellow));
+}
+
+.strong {
+  background-color: hsl(var(--color-neonGreen));
+  border: 2px solid hsl(var(--color-neonGreen));
+}
